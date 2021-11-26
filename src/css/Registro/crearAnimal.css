@@ -47,6 +47,7 @@
     display: grid;
     width: 100%;
     min-width: 300px;
+    max-width: 700px;
     font-size: 1.5rem;
     color: var(--font-color);
 }

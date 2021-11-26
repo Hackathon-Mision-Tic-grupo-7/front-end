@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../css/inicioGeneral/crearAnimal.css"
+import "../../css/Registro/crearAnimal.css"
 
 export const CrearAnimal = () => {
     return (
