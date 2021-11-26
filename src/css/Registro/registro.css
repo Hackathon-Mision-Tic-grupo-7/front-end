@@ -1,0 +1,85 @@
+.body-reg::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.3;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.body-reg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.body-reg > h1 {
+    color: var(--font-color);
+
+}
+
+.form-control {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 30px;
+    align-items: center;
+    justify-items: center;
+    padding: 1.5em 3em;
+}
+
+.form-label-input{
+    display: grid;
+    width: 40vw;
+    font-size: 1.5rem;
+    color: var(--font-color);
+}
+
+.form-label-input > input {
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+.form-label-input > select {
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 5px;
+    background-color: white;
+}
+
+.btn-reg{
+    grid-column: 1/-1;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-reg>button{
+    width: 50vw;
+    height: 5rem;
+    font-size: 1.5rem;
+    background-color: var(--backColor-btn-accept);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 5px 5px 5px black;
+    color: var(--font-color);
+    font-weight: 600;
+    text-shadow: 2px 2px 5px black;
+}
+
+@media(max-width: 700px){
+    .form-control {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .form-label-input{
+        width: 60vw;
+    }
+
+}
