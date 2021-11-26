@@ -1,0 +1,63 @@
+.body-list-page::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.3;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.body-list-page{
+    margin-left: var(--max-width-nav);
+    width: calc(100%-var(--max-width-nav));
+    min-width: 500px;
+}
+
+.center-page{
+    display: flex;
+    justify-content: center;
+}
+
+.center-page>div>h1{
+    text-align: center;
+    color: var(--font-color);
+}
+
+.table-animals{
+    font-size: 1.5rem;
+    color: rgb(255, 214, 78);
+    text-shadow: 2px 2px 5px black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+td {
+    border-bottom: 1px solid gray;
+    padding: 5px;
+}
+
+th {
+    padding: 0px 10px;
+    border-bottom: 4px solid black;
+}
+
+.list-btns{
+    padding: 0.4em;
+    border-radius: 5px;
+    background-color: rgb(18, 182, 3);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--font-color);
+    text-justify: center;
+    border-style: none;
+    box-shadow: 2px 1px 5px black;
+}
+
+
+
+
+
