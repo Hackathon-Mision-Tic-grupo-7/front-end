@@ -10,20 +10,20 @@ export const ListaAnimales = () => {
                 <table className="table-animals">
                     <thead>
                         <tr>
-                        <th>ID</th>
-                        <th>Fecha nacimiento</th>
-                        <th>Edad</th>
-                        <th>Signos vitales</th>
-                        <th>Agregar registro</th>
+                            <th>ID</th>
+                            <th>Fecha nacimiento</th>
+                            <th>Edad</th>
+                            <th>Signos vitales</th>
+                            <th>Agregar registro</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1234</td>
-                        <td>15/11/2015</td>
-                        <td>37</td>
-                        <td><button className="list-btns">Ver mas</button></td>
-                        <td><button className="list-btns">+</button></td>
+                        <tr>
+                            <td>1234</td>
+                            <td>15/11/2015</td>
+                            <td>37</td>
+                            <td><button className="list-btns">Ver mas</button></td>
+                            <td><button className="list-btns">+</button></td>
                         </tr>
                     </tbody>
                 </table>
