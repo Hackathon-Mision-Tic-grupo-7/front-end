@@ -1,6 +1,7 @@
 :root{
     --font-color: rgb(255, 255, 255);
     --backColor-btn-accept: rgb(27, 172, 27);
+    --backColor-nav: rgba(235, 168, 22, 0.863);
 }
 
 body::before{
