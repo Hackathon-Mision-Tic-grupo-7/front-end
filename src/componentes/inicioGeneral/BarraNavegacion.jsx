@@ -1,5 +1,6 @@
 import React from 'react'
 import "../../css/inicioGeneral/barraNavegacion.css"
+import { NavLink } from 'react-router-dom'
 
 export const BarraNavegacion = () => {
     return (
@@ -9,10 +10,11 @@ export const BarraNavegacion = () => {
             </div>
             <div className="navLinks">
                 <ul className="nav-ul">
-                    <li className="nav-li"><a>Lista de animales</a></li>
-                    <li className="nav-li"><a>Crear animal</a></li>
-                    <li className="nav-li"><a>Solicitudes</a></li>
-                    <li className="nav-li"><a>Cerrar sesión</a></li>
+                    <li className="nav-li"><NavLink to={'/resumen'}>Resumen</NavLink></li>
+                    <li className="nav-li"><NavLink to={'/animales'}>Lista de animales</NavLink></li>
+                    <li className="nav-li"><NavLink to={'/crearanimal'}>Crear animal</NavLink></li>
+                    <li className="nav-li"><NavLink to={'/solicitudes'}>Solicitudes</NavLink></li>
+                    <li className="nav-li"><NavLink to={'/'}>Cerrar sesión</NavLink></li>
                 </ul>
             </div>
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css/Registro/registro.css'
 
-export const Registro = () => {
+const Registro = () => {
     return (
         <div className="center-body">
             <div className="body-reg">
@@ -60,4 +60,6 @@ export const Registro = () => {
         </div>
     )
 }
+
+export default Registro
 

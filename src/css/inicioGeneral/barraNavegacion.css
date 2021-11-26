@@ -12,6 +12,7 @@
 .logoInicioNav{
     text-align: center;
     border-bottom: 3px solid gray;
+    padding: 20px;
 }
 
 .nav-ul{
@@ -25,6 +26,7 @@
     cursor: pointer;
     text-align: center;
     padding: 2em 0em;
+    margin: 1em;
 }
 
 .nav-li:hover{

@@ -1,10 +1,12 @@
 import React from 'react'
+import { BarraNavegacion } from './BarraNavegacion' 
 
 import "../../css/inicioGeneral/listaAnimales.css"
 
 export const ListaAnimales = () => {
     return (
         <div className="body-list-page center-page">
+            <BarraNavegacion />
             <div>
                 <h1>Nombre finca</h1>
                 <table className="table-animals">
