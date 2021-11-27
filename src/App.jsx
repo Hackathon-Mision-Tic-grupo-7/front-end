@@ -8,6 +8,7 @@ import {RegSignosVitales} from './componentes/formulario/RegSignosVitales';
 import {ListaAnimales} from './componentes/inicioGeneral/ListaAnimales';
 import {ListaSolicitudes} from './componentes/inicioGeneral/ListaSolicitudes';
 import {Resumen} from './componentes/resumen/Resumen'
+import {ResumenVaca} from './componentes/resumen/Resumenvaca'
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       <Route path='/regsignosvitales' element={<RegSignosVitales/>} />
       <Route path='/dashboard' element={<Resumen/>}/>
       <Route path ='/bovinos' element={<ListaAnimales/>}/>
-      <Route path='/solicitudes' element={<ListaSolicitudes/>}/>      
+      <Route path='/solicitudes' element={<ListaSolicitudes/>}/>     
+      <Route path='/resumenVaca' element={<ResumenVaca/>} />
 
 
 

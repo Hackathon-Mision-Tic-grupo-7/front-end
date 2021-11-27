@@ -1,9 +1,13 @@
 import React from 'react'
 import { BarraNavegacion } from './BarraNavegacion'
-
 import "../../css/inicioGeneral/listaAnimales.css"
+import { NavLink } from 'react-router-dom'
 
 export const ListaAnimales = () => {
+    let data = require("../../api/apiPruebaBovinos.json");
+    console.log(data)
+
+
     return (
         <>
             <BarraNavegacion />
@@ -18,16 +22,23 @@ export const ListaAnimales = () => {
                                 <th>Edad</th>
                                 <th>Signos vitales</th>
                                 <th>Agregar registro</th>
-                            </tr>
+                            </tr>    
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1234</td>
-                                <td>15/11/2015</td>
-                                <td>37</td>
-                                <td><button className="list-btns">Ver mas</button></td>
-                                <td><button className="list-btns">+</button></td>
-                            </tr>
+                            
+                                {data.map((data)=>{
+                                    return(
+                                        <tr>
+                                        <td>{data.ID}</td>
+                                        <td>{data.fecha_nacimiento}</td>
+                                        <td>{data.edad}</td>
+                                        <td><button className="list-btns"><NavLink to ={'/resumenvaca'}>Ver mas</NavLink></button></td>
+                                <td><button className="list-btns"> <NavLink to ={'/regsignosvitales'}>+</NavLink></button></td>
+                                        </tr>
+                                    )
+                                })}
+                                
+                            
                         </tbody>
                     </table>
                 </div>
@@ -35,3 +46,4 @@ export const ListaAnimales = () => {
         </>
     )
 }
+
