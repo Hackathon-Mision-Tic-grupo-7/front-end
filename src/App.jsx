@@ -16,10 +16,10 @@ function App() {
       <Route path='' element={<Inicio />} />
       <Route path='/registro' element={<Registro/>} />
       <Route path='/registroadmin' element={<RegistroAdmin/>} />
-      <Route path='/crearanimal' element={<CrearAnimal/>}/>
+      <Route path='/agregarbovino' element={<CrearAnimal/>}/>
       <Route path='/regsignosvitales' element={<RegSignosVitales/>} />
-      <Route path='/resumen' element={<Resumen/>}/>
-      <Route path ='/animales' element={<ListaAnimales/>}/>
+      <Route path='/dashboard' element={<Resumen/>}/>
+      <Route path ='/bovinos' element={<ListaAnimales/>}/>
       <Route path='/solicitudes' element={<ListaSolicitudes/>}/>      
 
 
