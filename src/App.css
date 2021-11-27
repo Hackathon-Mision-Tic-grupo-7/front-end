@@ -2,7 +2,8 @@
     --font-color: rgb(255, 255, 255);
     --backColor-btn-accept: rgb(27, 172, 27);
     --backColor-nav: rgba(235, 168, 22, 0.863);
-    --max-width-nav: 200px
+    --max-width-nav: 200px;
+    --font-color-secundary: rgb(252, 221, 119);
 }
 
 body::before{
