@@ -3,6 +3,10 @@ import "../../css/inicioGeneral/barraNavegacion.css"
 import { NavLink } from 'react-router-dom'
 
 export const BarraNavegacion = () => {
+
+
+
+
     return (
         <nav className="navBar">
             <div className="logoInicioNav">
@@ -10,9 +14,9 @@ export const BarraNavegacion = () => {
             </div>
             <div className="navLinks">
                 <ul className="nav-ul">
-                    <li className="nav-li"><NavLink to={'/resumen'}>Resumen</NavLink></li>
-                    <li className="nav-li"><NavLink to={'/animales'}>Lista de animales</NavLink></li>
-                    <li className="nav-li"><NavLink to={'/crearanimal'}>Crear animal</NavLink></li>
+                    <li className="nav-li"><NavLink to={'/dashboard'}>Inicio</NavLink></li>
+                    <li className="nav-li"><NavLink to={'/animales'}>Lista de bovinos</NavLink></li>
+                    <li className="nav-li"><NavLink to={'/agregarbobino'}>Crear animal</NavLink></li>
                     <li className="nav-li"><NavLink to={'/solicitudes'}>Solicitudes</NavLink></li>
                     <li className="nav-li"><NavLink to={'/'}>Cerrar sesión</NavLink></li>
                 </ul>
