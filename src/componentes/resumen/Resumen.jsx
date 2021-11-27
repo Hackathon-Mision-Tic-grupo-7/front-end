@@ -3,7 +3,7 @@ import "../../css/Resumen/resumen.css"
 import { GraficaBarras } from '../graficas/GraficaBarras'
 import { GraficaLinea } from '../graficas/GraficaLinea'
 import { BarraNavegacion } from '../inicioGeneral/BarraNavegacion'
-import '../../css/resumen/resumen.css'
+import '../../css/Resumen/resumen.css'
 
 export const Resumen = () => {
     const dataset =  [
