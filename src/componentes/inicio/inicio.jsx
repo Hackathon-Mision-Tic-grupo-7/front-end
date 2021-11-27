@@ -1,5 +1,5 @@
 import { Dialog} from '@material-ui/core';
-import React, {useEffect,  useState} from 'react'
+import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import '../../css/inicio/inicio.css'
 const Inicio = () => {
