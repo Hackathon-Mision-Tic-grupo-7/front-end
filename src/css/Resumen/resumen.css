@@ -1,47 +1,38 @@
-.body-resumen::before{
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: black;
-    opacity: 0.3;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
-
-.body-resumen{
-    margin-left: var(--max-width-nav);
-    width: calc(100% - var(--max-width-nav));
-    text-align: center;   
-}
-
-.body-resumen > h1{
-    font-size: 1.5rem;
-    color: var(--font-color);
-    text-shadow: 1px 1px 5px black;
-}
-
-.body-resumen > p{
-    font-size: 1.2rem;
-    color: var(--font-color-secundary);
-    text-shadow: 2px 2px 5px black;
-}
-
-
-.estadisticas-flex{
-    border: 1px solid red;
+.resumen{
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px 10px;
-    padding: 10px 15px;
+    width:max-content;
+    height: max-content;
+}
+h2{
+    display: flex;
+    justify-content: center;
 
 }
-
-.estadistica-graph{
-    width: 400px;
-    background-color: aliceblue;
+.wrapper {
+    display: grid;
+    grid-template-columns:max-content;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+.one{
+    grid-column: 1;
+    grid-row: 1 ;
+    margin: 10rem;
 }
+.two{
+    grid-column: 1;
+    grid-row: 2;
+    margin: 10rem;
+}
+.tres{
+    grid-column: 2;
+    grid-row: 1;
+    margin: 10rem;
+}
+.cuatro{
+    grid-column: 2;
+    grid-row: 2;
+    margin:10rem;
+}
+
