@@ -51,7 +51,7 @@ export const Resumen = () => {
                         <GraficaLinea datasets={dataset2} labels={label2}/>
                     </div>
                     <div className="estadistica-graph">
-                    <GraficaBarras datasets={dataset} labels={label}/>
+                    <GraficaLinea datasets={dataset2} labels={label2}/>
                     </div>
                     <div className="estadistica-graph">
                     <GraficaLinea datasets={dataset2} labels={label2}/>

@@ -3,6 +3,9 @@ import "../../css/Registro/crearAnimalSignosVitales.css"
 import { BarraNavegacion } from '../inicioGeneral/BarraNavegacion'
 
 export const RegSignosVitales = () => {
+
+
+    
     return (
         <>
             <BarraNavegacion />
@@ -22,7 +25,7 @@ export const RegSignosVitales = () => {
 
                         <div className="form-label-input-bovino">
                             <label >Temperatura (°C)</label>
-                            <input type='number' />
+                            <input type='text' />
                         </div>
 
                         <div className="form-label-input-bovino">
@@ -35,7 +38,7 @@ export const RegSignosVitales = () => {
                             <input type='number' />
                         </div>
                         <div className="btn-reg">
-                            <button>Agregar bovino</button>
+                            <button>Agregar Registro al Bovino</button>
                         </div>
 
                     </form>
