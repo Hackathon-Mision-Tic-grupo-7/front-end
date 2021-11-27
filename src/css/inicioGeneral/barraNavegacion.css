@@ -5,8 +5,8 @@
     width: var(--max-width-nav);
     background-color: var(--backColor-nav);
     border-right: 3px solid gray;
-    min-height: 100vh;
-    overflow: auto;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .logoInicioNav{
@@ -16,6 +16,8 @@
 }
 
 .nav-ul{
+    display: flex;
+    flex-direction: column;
     padding: 0;
     margin: 0;
 }
