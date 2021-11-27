@@ -66,3 +66,24 @@
 .aun{
     font-weight: lighter;
 }
+.dialog{
+    background-color:#507DBC ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
+    height: 30rem;
+
+}
+.btn-dialog{
+    display: flex;
+    margin: 1rem;
+    background-color: rgb(181, 143, 189);
+    border: none;
+    border-radius: 6px;
+    padding: 2rem;
+    width: max-content;
+    justify-content: center;
+}
+
