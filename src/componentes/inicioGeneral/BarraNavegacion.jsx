@@ -15,8 +15,8 @@ export const BarraNavegacion = () => {
             <div className="navLinks">
                 <ul className="nav-ul">
                     <li className="nav-li"><NavLink to={'/dashboard'}>Inicio</NavLink></li>
-                    <li className="nav-li"><NavLink to={'/animales'}>Lista de bovinos</NavLink></li>
-                    <li className="nav-li"><NavLink to={'/agregarbobino'}>Crear animal</NavLink></li>
+                    <li className="nav-li"><NavLink to={'/bovinos'}>Lista bovinos</NavLink></li>
+                    <li className="nav-li"><NavLink to={'/agregarbovino'}>Agregar bovino</NavLink></li>
                     <li className="nav-li"><NavLink to={'/solicitudes'}>Solicitudes</NavLink></li>
                     <li className="nav-li"><NavLink to={'/'}>Cerrar sesión</NavLink></li>
                 </ul>
