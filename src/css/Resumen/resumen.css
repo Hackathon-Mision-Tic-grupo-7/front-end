@@ -29,6 +29,13 @@
     text-shadow: 2px 2px 5px black;
 }
 
+.filtro-typeGraph{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
 
 .estadisticas-flex{
     display: flex;
