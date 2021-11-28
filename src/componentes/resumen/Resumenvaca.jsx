@@ -1,16 +1,33 @@
-import React ,{useState}from 'react'
+import React ,{useState, useEffect}from 'react'
 import "../../css/Resumen/resumen.css"
 import { GraficaBarras } from '../graficas/GraficaBarras'
 import { GraficaLinea } from '../graficas/GraficaLinea'
 import { BarraNavegacion } from '../inicioGeneral/BarraNavegacion'
 import '../../css/Resumen/resumen.css'
 import { useParams} from 'react-router-dom';
+import { obtenerRegistroBovino } from '../../api/api'
 
 export const ResumenVaca = () => {
   const { _id } = useParams();
-  let data = require("../../api/apiMedicionesBovinos.json");
+  const [vaca, setVaca] = useState([])
 
-  const sortedData = data.sort((a, b) => b.fecha_muestra - a.fecha_muestra)
+  useEffect(() => {
+    obtenerRegistroBovino(
+         _id,
+        (response)=>{
+            setVaca(response.data)
+        },
+        (error)=>{
+            console.error("error", error)
+        }
+    )
+}, [])
+
+
+//  let data = require("../../api/apiMedicionesBovinos.json");
+  
+
+  const sortedData = vaca.sort((a, b) => b.fecha_muestra - a.fecha_muestra)
   const tem = [];
   const label2 = [];
  const rpm = [];
@@ -23,7 +40,7 @@ export const ResumenVaca = () => {
  
 
   {sortedData.map((data)=>{
-    if(data.idbovino.$oid === _id ){
+    if(data.idbovino === _id ){
       tem.push(data.temperatura);
       rpm.push(data.FR);
       lpm.push(data.FC);
@@ -70,8 +87,8 @@ export const ResumenVaca = () => {
       backgroundColor: 'rgba(255, 99, 132)',
     },
     {
-      label: 'temperatura media',
-      data: Array(24).fill(38.5),
+      label: 'Temperatura media',
+      data: Array(tem.length).fill(38.5),
       backgroundColor: 'rgba(53, 162, 235)',
     }
   ]
@@ -82,8 +99,8 @@ export const ResumenVaca = () => {
       backgroundColor: 'rgba(255, 99, 132)',
     },
     {
-      label: 'respiraciones promedias',
-      data: Array(24).fill(23),
+      label: 'Respiraciones promedias',
+      data: Array(tem.length).fill(23),
       backgroundColor: 'rgba(53, 162, 235)',
     }
   ]
@@ -94,8 +111,8 @@ export const ResumenVaca = () => {
       backgroundColor: 'rgba(255, 99, 132)',
     },
     {
-      label: 'latidos promedio',
-      data: Array(24).fill(60),
+      label: 'Latidos promedio',
+      data: Array(tem.length).fill(60),
       backgroundColor: 'rgba(53, 162, 235)',
     }
   ]

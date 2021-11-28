@@ -25,7 +25,7 @@ export const ListaSolicitudes = () => {
                                 <td>1234</td>
                                 <td>15/11/2015</td>
                                 <td>37</td>
-                                <td><button className="list-btns-ver">Ver mas</button></td>
+                                <td>CARGO</td>
                                 <td><button className="list-btns-check">
                                     &#10003;</button> <button className="list-btns-x">x</button></td>
                             </tr>

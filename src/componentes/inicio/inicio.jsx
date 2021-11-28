@@ -31,7 +31,7 @@ const Inicio = () => {
                     <input  type="password" placeholder ="contraseña"></input>
                     </div>
                     <div >
-                        <button className="btn">Inciar sesion</button>
+                        <button className="btn"><NavLink to = {'/dashboard'}>Inciar sesion</NavLink></button>
                         </div>
                         <div>
                         <span className="aun">¿Aun no tienes cuenta?,</span>

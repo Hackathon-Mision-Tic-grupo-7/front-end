@@ -1,15 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "../../css/Resumen/resumen.css"
 import { GraficaBarras } from '../graficas/GraficaBarras'
 import { GraficaLinea } from '../graficas/GraficaLinea'
 import { BarraNavegacion } from '../inicioGeneral/BarraNavegacion'
 import '../../css/Resumen/resumen.css'
 import vacas from "../../api/apiPruebaBovinos.json"
-import medicionVaca from "../../api/apiMedicionesBovinos.json"
+//import medicionVaca from "../../api/apiMedicionesBovinos.json"
 import { genMonths } from '../../utils/datosfechas'
 import { generarDataSetVariosMesYearDatoVital } from '../../utils/genDataSet'
+import { obtenerRegistros } from '../../api/api'
 
 export const Resumen = () => {
+
+  const [mediciones, setMedeciones] = useState([])
+  useEffect(() => {
+    obtenerRegistros(
+      (response)=>{
+        setMedeciones(response.data)
+      }, (error)=>{
+        console.error(error)
+      }
+    )
+    
+  }, [])
 
   const [typeGraph, setTypeGraph] = useState("bar");
 
@@ -18,13 +31,13 @@ export const Resumen = () => {
   const label = genMonths(meses);
 
   //Datos temperatura
-  const datasetT = generarDataSetVariosMesYearDatoVital(medicionVaca, meses, year, "fecha_muestra", "temperatura", [37.7, 39])
+  const datasetT = generarDataSetVariosMesYearDatoVital(mediciones, meses, year, "fecha_muestra", "temperatura", [37.7, 39])
 
   //Datos frecuencia cardiaca
-  const datasetLpm = generarDataSetVariosMesYearDatoVital(medicionVaca, meses, year, "fecha_muestra", "FC", [40, 80])
+  const datasetLpm = generarDataSetVariosMesYearDatoVital(mediciones, meses, year, "fecha_muestra", "FC", [40, 80])
 
   //Datos frecuencia respiratoria
-  const datasetRpm = generarDataSetVariosMesYearDatoVital(medicionVaca, meses, year, "fecha_muestra", "FR", [10, 30])
+  const datasetRpm = generarDataSetVariosMesYearDatoVital(mediciones, meses, year, "fecha_muestra", "FR", [10, 30])
 
  
   return (

@@ -1,11 +1,27 @@
-import React from 'react'
+import React , {useState, useEffect} from 'react'
 import { BarraNavegacion } from './BarraNavegacion'
 import "../../css/inicioGeneral/listaAnimales.css"
 import { Link } from 'react-router-dom'
+import { obtenerBovinos } from '../../api/api'
 
 export const ListaAnimales = () => {
-    let data = require("../../api/apiPruebaBovinos.json");
-    console.log(data)
+//    let data = require("../../api/apiPruebaBovinos.json");
+    const [bovinos, setBovinos] = useState([])
+
+    useEffect(() => {
+        obtenerBovinos(
+            (response)=>{
+                setBovinos(response.data)
+            },
+            (error)=>{
+                console.error("error", error)
+            }
+        )
+    }, [])
+
+
+
+    console.log(bovinos)
 
 
     return (
@@ -26,14 +42,14 @@ export const ListaAnimales = () => {
                         </thead>
                         <tbody>
                             
-                                {data.map((data)=>{
+                                {bovinos.map((data)=>{
                                     return(
                                         <tr>
                                         <td>{data.ID}</td>
                                         <td>{data.fecha_nacimiento}</td>
                                         <td>{data.edad}</td>
-                                        <td><button className="list-btns"><Link to ={ `/resumen/${data._id.$oid}`}>Ver mas</Link></button></td>
-                                <td><button className="list-btns"> <Link to ={`/regsignosvitales/${data._id.$oid}`}>+</Link></button></td>
+                                        <td><button className="list-btns"><Link to ={ `/resumen/${data._id}`}>Ver mas</Link></button></td>
+                                <td><button className="list-btns"> <Link to ={`/regsignosvitales/${data._id}`}>+</Link></button></td>
                                         </tr>
                                     )
                                 })}
