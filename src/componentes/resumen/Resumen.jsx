@@ -6,67 +6,44 @@ import { BarraNavegacion } from '../inicioGeneral/BarraNavegacion'
 import '../../css/Resumen/resumen.css'
 import vacas from "../../api/apiPruebaBovinos.json"
 import medicionVaca from "../../api/apiMedicionesBovinos.json"
-import { contarPorMesYear } from '../../utils/contar'
-import { getMonth, getYear } from '../../utils/datosfechas'
-// import { getDay } from '../../utils/datosfechas'
+import { contarPorMesYear, contarPorMesYearDatoVital, contarVariosMesYearDatoVital } from '../../utils/contar'
+import { genMonths, getMonth, getYear } from '../../utils/datosfechas'
+import { genDataSet, generarDataSetVariosMesYearDatoVital } from '../../utils/genDataSet'
 
 export const Resumen = () => {
-  
-  
-  const dataset = [
-    {
-      label: 'Dataset 1',
-      data: [1, 5],
-      backgroundColor: 'rgba(255, 99, 132)',
-    },
-    {
-      label: 'Dataset 2',
-      data: [3, 4],
-      backgroundColor: 'rgba(53, 162, 235)',
-    }
-  ]
 
-  const label = ["l1", "l2"]
+  const year = 2021;
+  const meses = [1,2,3,4,5,6,7,8,9,10,11,12]
+  const label = genMonths(meses);
 
-  const dataset2 = [
-    {
-      label: 'Dataset 1',
-      data: [1, 5, 4],
-      backgroundColor: 'rgba(255, 99, 132)',
-    },
-    {
-      label: 'Dataset 2',
-      data: [3, 4, 2],
-      backgroundColor: 'rgba(53, 162, 235)',
-    }
-  ]
+  //Datos temperatura
+  const datasetT = generarDataSetVariosMesYearDatoVital(medicionVaca, meses, year, "fecha_muestra", "temperatura", [37.7, 39])
 
-  const label2 = ["l1", "l2", "l3"]
+  //Datos frecuencia cardiaca
+  const datasetLpm = generarDataSetVariosMesYearDatoVital(medicionVaca, meses, year, "fecha_muestra", "FC", [40, 80])
 
-  // console.log((getDay(medicionVaca[0].fecha_muestra)));
+  //Datos frecuencia respiratoria
+  const datasetRpm = generarDataSetVariosMesYearDatoVital(medicionVaca, meses, year, "fecha_muestra", "FR", [10, 30])
 
-  console.log(contarPorMesYear(medicionVaca,6,2021,"fecha_muestra"));
-  // console.log(medicionVaca.filter(item => parseInt(item["temperatura"]) === 38));
-  
-
+ 
   return (
     <>
       <BarraNavegacion />
       <div className='body-resumen'>
         <h1>Bienvenido a "Nombre finca"</h1>
         <p>Mira las estadisticas de tus bovinos</p>
+        <p>Año {year}</p>
         <div className="estadisticas-flex">
           <div className="estadistica-graph">
-            <GraficaBarras datasets={dataset} labels={label} />
+            <GraficaBarras datasets={datasetT} labels={label} title="Temperatura (°C)" />
           </div>
+
           <div className="estadistica-graph">
-            <GraficaLinea datasets={dataset2} labels={label2} />
+            <GraficaBarras datasets={datasetLpm} labels={label} title="Frecuencia cardiaca (Lpm)" />
           </div>
+
           <div className="estadistica-graph">
-            <GraficaLinea datasets={dataset2} labels={label2} />
-          </div>
-          <div className="estadistica-graph">
-            <GraficaLinea datasets={dataset2} labels={label2} />
+            <GraficaBarras datasets={datasetRpm} labels={label} title="Frecuencia Respiratoria (Lpm)" />
           </div>
         </div>
 

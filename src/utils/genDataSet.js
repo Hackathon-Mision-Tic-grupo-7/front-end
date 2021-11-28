@@ -1,27 +1,36 @@
-// const dataset = [
-//     {
-//       label: 'Dataset 1',
-//       data: [1, 5],
-//       backgroundColor: 'rgba(255, 99, 132)',
-//     },
-//     {
-//       label: 'Dataset 2',
-//       data: [3, 4],
-//       backgroundColor: 'rgba(53, 162, 235)',
-//     }
-//   ]
+import { contarVariosMesYearDatoVital } from "./contar"
 
+export const genDataVars = (dataArray, nameDataSet = "Dataset 1") => {
 
-
-export const genDataVars = (typeDataSet = "Bar", dataArray, nameDataSet = "Dataset 1") => {
-    if (typeDataSet === "Bar"){
-        return [dataArray[0],{
-            label: nameDataSet,
-            data: dataArray[1],
-            backgroundColor: `"rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})"`
-        }
+    return {
+        label: nameDataSet,
+        data: dataArray,
+        backgroundColor: `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`
     }
-    else if(typeDataSet === "Lin"){
+}
 
+export const genDataSet = (dataArray=[], nameDataSets = ["Dataset 1"]) => {
+
+    let dataSet = []
+
+    for(let i=0;i < nameDataSets.length; i++){
+        dataSet.push(genDataVars(dataArray[i], nameDataSets[i]))
     }
+    return dataSet 
+}
+
+export const generarDataSetVariosMesYearDatoVital= (data, meses=[], year, varFecha, variableAGraficar, datosMinMax = [], nameDataSets = ["Saludables", "No saludables"]) => {
+  const datosVitales = {
+    varVt: variableAGraficar,
+    saludable: true,
+    min: datosMinMax[0],
+    max: datosMinMax[1]
+  }
+
+  const dataList = [
+    contarVariosMesYearDatoVital(data, meses, year, varFecha, datosVitales, true),
+    contarVariosMesYearDatoVital(data, meses, year, varFecha, {...datosVitales, saludable: false}, true)
+  ]
+
+  return genDataSet(dataList, nameDataSets)
 }
