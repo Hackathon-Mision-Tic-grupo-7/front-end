@@ -15,6 +15,7 @@ function App() {
   const {user, isAuthenticated, isLoading} = useAuth0()
 
   return (
+    
     <BrowserRouter>
     <Routes>
       <Route path='' element={isAuthenticated ? <Resumen/> : <Inicio />} />

@@ -1,7 +1,7 @@
 import axios from 'axios';
 //import { nanoid } from 'nanoid';
 
-const baseURL = "http://localhost:3000"
+const baseURL = "https://hackathon-backend1.herokuapp.com"
 
 
 
