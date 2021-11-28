@@ -9,12 +9,15 @@ import {ListaAnimales} from './componentes/inicioGeneral/ListaAnimales';
 import {ListaSolicitudes} from './componentes/inicioGeneral/ListaSolicitudes';
 import {Resumen} from './componentes/resumen/Resumen'
 import {ResumenVaca} from './componentes/resumen/Resumenvaca'
+import { useAuth0 } from '@auth0/auth0-react'
 
 function App() {
+  const {user, isAuthenticated, isLoading} = useAuth0()
+
   return (
     <BrowserRouter>
     <Routes>
-      <Route path='' element={<Inicio />} />
+      <Route path='' element={isAuthenticated ? <Resumen/> : <Inicio />} />
       <Route path='/registro' element={<Registro/>} />
       <Route path='/registroadmin' element={<RegistroAdmin/>} />
       <Route path='/agregarbovino' element={<CrearAnimal/>}/>

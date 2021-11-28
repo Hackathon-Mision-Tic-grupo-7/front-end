@@ -1,6 +1,7 @@
 import React from 'react'
 import "../../css/inicioGeneral/barraNavegacion.css"
 import { NavLink } from 'react-router-dom'
+import { LogOutButtom } from './LogOut';
 
 export const BarraNavegacion = () => {
 
@@ -18,7 +19,8 @@ export const BarraNavegacion = () => {
                     <li className="nav-li"><NavLink to={'/bovinos'}>Lista bovinos</NavLink></li>
                     <li className="nav-li"><NavLink to={'/agregarbovino'}>Agregar bovino</NavLink></li>
                     <li className="nav-li"><NavLink to={'/solicitudes'}>Solicitudes</NavLink></li>
-                    <li className="nav-li"><NavLink to={'/'}>Cerrar sesión</NavLink></li>
+                    <li className="nav-li"><LogOutButtom/></li>
+                    {/* <li className="nav-li"><NavLink to={'/'}>Cerrar sesión</NavLink></li> */}
                 </ul>
             </div>
 
