@@ -90,7 +90,7 @@ export const ResumenVaca = () => {
   const latidos = [
     {
       label: 'Latidos por minuto',
-      data: tem,
+      data: lpm,
       backgroundColor: 'rgba(255, 99, 132)',
     },
     {
