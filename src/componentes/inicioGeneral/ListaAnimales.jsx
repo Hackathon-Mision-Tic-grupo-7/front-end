@@ -1,7 +1,7 @@
 import React from 'react'
 import { BarraNavegacion } from './BarraNavegacion'
 import "../../css/inicioGeneral/listaAnimales.css"
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const ListaAnimales = () => {
     let data = require("../../api/apiPruebaBovinos.json");
@@ -32,8 +32,8 @@ export const ListaAnimales = () => {
                                         <td>{data.ID}</td>
                                         <td>{data.fecha_nacimiento}</td>
                                         <td>{data.edad}</td>
-                                        <td><button className="list-btns"><NavLink to ={'/resumenvaca'}>Ver mas</NavLink></button></td>
-                                <td><button className="list-btns"> <NavLink to ={'/regsignosvitales'}>+</NavLink></button></td>
+                                        <td><button className="list-btns"><Link to ={ `/resumen/${data._id.$oid}`}>Ver mas</Link></button></td>
+                                <td><button className="list-btns"> <Link to ={`/regsignosvitales/${data._id.$oid}`}>+</Link></button></td>
                                         </tr>
                                     )
                                 })}

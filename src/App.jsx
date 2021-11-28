@@ -18,11 +18,11 @@ function App() {
       <Route path='/registro' element={<Registro/>} />
       <Route path='/registroadmin' element={<RegistroAdmin/>} />
       <Route path='/agregarbovino' element={<CrearAnimal/>}/>
-      <Route path='/regsignosvitales' element={<RegSignosVitales/>} />
+      <Route path='/regsignosvitales/:_id' element={<RegSignosVitales/>} />
       <Route path='/dashboard' element={<Resumen/>}/>
       <Route path ='/bovinos' element={<ListaAnimales/>}/>
       <Route path='/solicitudes' element={<ListaSolicitudes/>}/>     
-      <Route path='/resumenVaca' element={<ResumenVaca/>} />
+      <Route path='/resumen/:_id' element={<ResumenVaca/>} />
 
 
 
