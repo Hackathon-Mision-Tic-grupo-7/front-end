@@ -50,12 +50,12 @@ export const ResumenVaca = () => {
       backgroundColor: 'rgba(255, 99, 132)',
     },
     {
-      label: 'Latidos',
+      label: 'Respiraciones',
       data: Array(1).fill(malacardi.length),
       backgroundColor: 'rgba(53, 162, 235)',
     },
     {
-      label: 'Respiraciones',
+      label: 'Latidos',
       data: Array(1).fill(malresp.length),
       backgroundColor: 'rgba(57, 180, 205)',
     }
