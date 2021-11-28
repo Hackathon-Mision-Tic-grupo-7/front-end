@@ -12,9 +12,6 @@ export const RegSignosVitales = () => {
 //    let data = require("../../api/apiPruebaBovinos.json");
     const [vaca, setVaca] = useState([])
 
-    const correo  = "jeovanis@outlook.com"
-    const name = "Jeovan"
-    const message = "HOLA LA VACA ESTA EN LA MALA"
 
 useEffect(() => {
   obtenerRegistroBovino(
@@ -29,6 +26,7 @@ useEffect(() => {
 }, [])
 
     const datafilter = vaca.find(element => element.idbovino === _id);
+    const [algo, setAlgo] = useState("")
 
 
     const form = useRef(null);
@@ -41,12 +39,42 @@ useEffect(() => {
         e.preventDefault();
                 if (nuevoRegistro.temperatura > 39 || nuevoRegistro.temperatura < 37.7){
                     toast.warning('Su bovino presenta valores anormales de temperatura, comuniquese con el veterinario')
+                    setAlgo(`La vaca con ID: ${nuevoRegistro.idbovino} presenta valores anormales de temperatura, el valor de temperatura actual es ${nuevoRegistro.temperatura}, contacte al administrador`)
+                    emailjs.sendForm('service_yzxmbbr',
+                    'template_xpnlr77', 
+                    e.target, 
+                    'user_br3ldvQFxVEfmzyHKXuUS')
+                    .then(res=>{
+                        console.log(res);
+                    }).catch(err =>{
+                        console.error(err);
+                    })
                 }
                 if (nuevoRegistro.FC > 80 || nuevoRegistro.FC < 40){
                        toast.warning('Su bovino presenta valores anormales de ritmo cardiaco, comuniquese con el veterinario')
+                       setAlgo(`La vaca con ID: ${nuevoRegistro.idbovino} presenta valores anormales de ritmo cardiaco, el valor actual de ritmo cardiaco es ${nuevoRegistro.FC}, contacte al administrador`)
+                    emailjs.sendForm('service_yzxmbbr',
+                       'template_xpnlr77', 
+                       e.target, 
+                       'user_br3ldvQFxVEfmzyHKXuUS')
+                       .then(res=>{
+                           console.log(res);
+                       }).catch(err =>{
+                           console.error(err);
+                       })   
                 }
                if (nuevoRegistro.FR > 30 || nuevoRegistro.FR < 10){
-                       toast.warning('Su bovino presenta valores anormales de frecuencia respiratoria, comuniquese con el veterinario')
+                    toast.warning('Su bovino presenta valores anormales de frecuencia respiratoria, comuniquese con el veterinario')
+                       setAlgo(`La vaca con ID: ${nuevoRegistro.idbovino} presenta valores anormales de frecuencia respiratoria, el valor actual de frecuencia respiratoria es ${nuevoRegistro.FR}, contacte al administrador`)
+                       emailjs.sendForm('service_yzxmbbr',
+                       'template_xpnlr77', 
+                       e.target, 
+                       'user_br3ldvQFxVEfmzyHKXuUS')
+                       .then(res=>{
+                           console.log(res);
+                       }).catch(err =>{
+                           console.error(err);
+                       })   
                 }
 
             await(crearRegistro({
@@ -100,6 +128,12 @@ useEffect(() => {
                             <label >Frecuecia respiratoria (rpm)</label>
                             <input type='number' name="FR" />
                         </div>
+                        <input type='hidden' name="name" value={"Jeovan"}/>
+                        <input type='hidden' name="correo" value={"jeovanis@outlook.com"} />
+                        <input type='hidden' name="message" value={algo} />
+                        <input type='hidden' name="from_name" value={"Tu Finca"} />
+
+
                         <div className="btn-reg">
                             <button type="submit">Agregar Registro al Bovino</button>
                         </div>
