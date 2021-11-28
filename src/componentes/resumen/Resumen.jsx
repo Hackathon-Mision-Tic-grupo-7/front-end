@@ -4,8 +4,15 @@ import { GraficaBarras } from '../graficas/GraficaBarras'
 import { GraficaLinea } from '../graficas/GraficaLinea'
 import { BarraNavegacion } from '../inicioGeneral/BarraNavegacion'
 import '../../css/Resumen/resumen.css'
+import vacas from "../../api/apiPruebaBovinos.json"
+import medicionVaca from "../../api/apiMedicionesBovinos.json"
+import { contarPorMesYear } from '../../utils/contar'
+import { getMonth, getYear } from '../../utils/datosfechas'
+// import { getDay } from '../../utils/datosfechas'
 
 export const Resumen = () => {
+  
+  
   const dataset = [
     {
       label: 'Dataset 1',
@@ -36,6 +43,11 @@ export const Resumen = () => {
 
   const label2 = ["l1", "l2", "l3"]
 
+  // console.log((getDay(medicionVaca[0].fecha_muestra)));
+
+  console.log(contarPorMesYear(medicionVaca,6,2021,"fecha_muestra"));
+  // console.log(medicionVaca.filter(item => parseInt(item["temperatura"]) === 38));
+  
 
   return (
     <>
