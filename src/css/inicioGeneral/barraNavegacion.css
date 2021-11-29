@@ -1,0 +1,40 @@
+.navBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--max-width-nav);
+    background-color: var(--backColor-nav);
+    border-right: 3px solid gray;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.logoInicioNav{
+    text-align: center;
+    border-bottom: 3px solid gray;
+    padding: 20px;
+}
+
+.nav-ul{
+    padding: 0;
+    margin: 0;
+}
+
+.nav-li{
+    border-bottom: 1px solid gray;
+    list-style-type: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 2em 0em;
+    margin: 1em;
+}
+
+.nav-li:hover{
+    opacity: 0.8;
+}
+
+.nav-li>a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--font-color);
+}

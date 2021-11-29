@@ -1,0 +1,88 @@
+
+.center-body{
+    display: flex;
+    justify-content: center;
+    width: calc(100%-var(--max-width-nav));
+    min-width: 500px;
+    margin-left: var(--max-width-nav);
+}
+
+.body-reg::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.3;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.body-reg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    min-height: 100vh;
+    max-width: 1200px;
+}
+
+
+.body-reg > h1 {
+    color: var(--font-color);
+}
+
+.form-control-bovino {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px 30px;
+    align-items: center;
+    justify-items: center;
+    padding: 1.5em 3em;
+}
+
+.form-label-input-bovino{
+    display: grid;
+    width: 100%;
+    min-width: 300px;
+    max-width: 700px;
+    font-size: 1.5rem;
+    color: var(--font-color);
+}
+
+.form-label-input-bovino > input {
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+.form-label-input-bovino > select {
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 5px;
+    background-color: white;
+}
+
+
+.btn-reg{
+    
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-reg>button{
+    width: 50vw;
+    height: 5rem;
+    font-size: 1.5rem;
+    background-color: var(--backColor-btn-accept);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 5px 5px 5px black;
+    color: var(--font-color);
+    font-weight: 600;
+    text-shadow: 2px 2px 5px black;
+}
+
