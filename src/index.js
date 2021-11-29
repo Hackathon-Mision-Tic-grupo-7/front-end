@@ -11,7 +11,6 @@ ReactDOM.render(
     domain="dev-7wmznvx4.us.auth0.com"
     clientId="Vuq4mVNpzyOHa6mclPD4iAWUYrogh6mq"
     redirectUri="https://hackathon-frontend1.herokuapp.com/">
-     
     </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
